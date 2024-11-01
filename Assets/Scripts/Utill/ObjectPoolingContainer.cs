@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+[System.Serializable]
+public struct ObjectPoolData<T>
+{
+    public T Type;
+    public int PoolCount;
+}
 
 public class ObjectPoolingContainer<T> : MonoBehaviour where T : MonoBehaviour, IObjectPoolAble<T>
 {
@@ -34,8 +40,12 @@ public class ObjectPoolingContainer<T> : MonoBehaviour where T : MonoBehaviour, 
         return objectPools[objName].GetFromPool(spawnPos);
     }
 
-    private void PushObject(T obj)
+    public void PushObject(T obj)
     {
-        objectPools[obj.name].ReturnToPool(obj);
+        int index = obj.name.IndexOf("(Clone)");
+        string objName = obj.name.Substring(0, index);
+
+        objectPools[objName].ReturnToPool(obj);
     }
+
 }

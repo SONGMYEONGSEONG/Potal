@@ -3,12 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public struct ObjectPoolData<T>
-{
-    public T Type;
-    public int PoolCount;
-}
+
 
 public class Trigger : MonoBehaviour
 {

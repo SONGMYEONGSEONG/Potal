@@ -11,4 +11,12 @@ public class TestObject : MonoBehaviour,IObjectPoolAble<TestObject>
     {
         Debug.Log("게임매니저 정상 동작");
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ObjectPoolManager.Instance.TestObjPool.PushObject(this);
+        }
+    }
 }
