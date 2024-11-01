@@ -18,6 +18,10 @@ public class Turret : PuzzleInteractableObject
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            ObjectPoolManager.Instance.PuzzleInteractableObjectPool.PushObject(this);
+        }
         transform.position += new Vector3(1f, 0, 0) * Time.deltaTime;
     }
 }

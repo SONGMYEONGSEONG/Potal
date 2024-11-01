@@ -18,10 +18,10 @@ public class LeverSwitch : PuzzleInteractableObject
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    ObjectPoolManager.Instance.TestObjPool.PushObject(this);
-        //}
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            ObjectPoolManager.Instance.PuzzleInteractableObjectPool.PushObject(this);
+        }
         transform.position += new Vector3(0f, 1f, 0) * Time.deltaTime;
     }
 }
