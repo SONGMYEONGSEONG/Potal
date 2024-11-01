@@ -33,6 +33,11 @@ public class ObjectPoolingContainer<T> : MonoBehaviour where T : MonoBehaviour,I
         return objectPools[objName].GetFromPool(spawnPos);
     }
 
+    public T PoolObject(PuzzleObject obj, Vector2 spawnPos)
+    {
+        return objectPools[obj.ToString()].GetFromPool(spawnPos);
+    }
+
     public void PushObject(T obj)
     {
         int index = obj.name.IndexOf("(Clone)");

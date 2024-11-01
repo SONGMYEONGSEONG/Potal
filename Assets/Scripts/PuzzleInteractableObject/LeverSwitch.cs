@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class LeverSwitch : PuzzleInteractableObject
 {
+    public bool onSwitch = false; //나중에 private로 변경해야함
 
     public override void InterAction()
     {
+        onSwitch = !onSwitch;
 
     }
 
@@ -15,13 +17,5 @@ public class LeverSwitch : PuzzleInteractableObject
     {
 
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            ObjectPoolManager.Instance.PuzzleInteractableObjectPool.PushObject(this);
-        }
-        transform.position += new Vector3(0f, 1f, 0) * Time.deltaTime;
-    }
+    
 }
