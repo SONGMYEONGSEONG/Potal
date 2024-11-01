@@ -11,4 +11,14 @@ public abstract class PuzzleInteractableObject : MonoBehaviour, IObjectPoolAble<
 
     public virtual void InterAction() { }
     public virtual void Print() {}
+
+    private void Start()
+    {
+        ReturnToPoolObject += ObjectPoolManager.Instance.PuzzleInteractableObjectPool.PushObject;
+    }
+
+    private void OnDisable()
+    {
+        ReturnToPoolObject?.Invoke(this);
+    }
 }
