@@ -3,14 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-[System.Serializable]
-public struct ObjectPoolData<T>
-{
-    public T Type;
-    public int PoolCount;
-}
-
-public class ObjectPoolingContainer<T> : MonoBehaviour where T : MonoBehaviour, IObjectPoolAble<T>
+public class ObjectPoolingContainer<T> : MonoBehaviour where T : MonoBehaviour,IObjectPoolAble<T>
 {
     private Dictionary<string, ObjectPool<T>> objectPools = new Dictionary<string, ObjectPool<T>>();
     public void Initialize(List<ObjectPoolData<T>> prefabes)

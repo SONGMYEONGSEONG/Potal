@@ -1,13 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
-
-public interface IObjectPoolAble<T>
-{
-    public event Action<T> ReturnToPoolObject;
-}
 
 public class ObjectPool<T> where T : MonoBehaviour
 {
@@ -63,10 +57,5 @@ public class ObjectPool<T> where T : MonoBehaviour
     public void ClearPool()
     {
         pool.Clear();
-
-        //for (int i = 0; i < pool.Count; i++)
-        //{
-        //    pool.Dequeue();
-        //}
     }
 }

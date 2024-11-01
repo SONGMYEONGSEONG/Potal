@@ -6,21 +6,23 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     //Debug
-    public TestObject Player;
-
-    //Debug
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            ObjectPoolManager.Instance.TestObjPool.PoolObject("TestPrefebs",new Vector3(0,0,0));
+            ObjectPoolManager.Instance.PuzzleInteractableObjectPool.PoolObject("LeverSwitch", new Vector3(0, 0, 0));
         }
 
         if (Input.GetKeyDown(KeyCode.V))
         {
-            ObjectPoolManager.Instance.TestObjPool.PoolObject("TestPrefebs2", new Vector3(0, 1, 0));
+            ObjectPoolManager.Instance.PuzzleInteractableObjectPool.PoolObject("Turret", new Vector3(0, 1, 0));
         }
     }
 
+    //Debug
+    public void Print()
+    {
+        Debug.Log("게임매니저 생성 완료");
+    }
 
 }
