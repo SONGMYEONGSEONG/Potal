@@ -11,14 +11,8 @@ public interface IObjectPoolAble<T>
 
 public class ObjectPool<T> where T : MonoBehaviour
 {
-    public Queue<T> pool;
+    public Queue<T> pool = new Queue<T>();
     public int PoolCount;
-
-    //InitializePool
-    public void InitializePool()
-    {
-        pool = new Queue<T>();
-    }
 
     //CreateObject
     public void CreateObject(T _object)
@@ -29,11 +23,12 @@ public class ObjectPool<T> where T : MonoBehaviour
             return;
         }
 
+        _object.gameObject.SetActive(false);
         pool.Enqueue(_object);
     }
 
     //GetFromPool
-    public T GetFromPool()
+    public T GetFromPool(Vector2 spawnPos)
     {
         if (IsObjectAvailable())
         {
@@ -41,12 +36,15 @@ public class ObjectPool<T> where T : MonoBehaviour
         }
 
         T _object = pool.Dequeue();
+        _object.transform.position = spawnPos;
+        _object.gameObject.SetActive(true);
         return _object;
     }
 
     //ReturnToPool
     public void ReturnToPool(T _object)
     {
+        _object.gameObject.SetActive(false);
         pool.Enqueue(_object);
     }
 
