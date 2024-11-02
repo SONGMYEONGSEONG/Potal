@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public enum PuzzleObject
@@ -12,18 +9,17 @@ public enum PuzzleObject
 public class GameManager : Singleton<GameManager>
 {
     //Debug
-    private void Update()
+    private Player player;
+    public Player Player
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ObjectPoolManager.Instance.PuzzleInteractableObjectPool.PoolObject(PuzzleObject.LeverSwitch, new Vector3(0, 0, 0));
-        }
-
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            ObjectPoolManager.Instance.PuzzleInteractableObjectPool.PoolObject(PuzzleObject.Turret, new Vector3(0, 1, 0));
-        }
+        get { return player; }
+        set { player = value; }
     }
+    protected override void Awake()
+    {
+        base.Awake();
+    }
+
 
     //Debug
     public void Print()

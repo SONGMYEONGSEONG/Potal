@@ -1,9 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class ObjectPoolingContainer<T> : MonoBehaviour where T : MonoBehaviour,IObjectPoolAble<T>
+public class ObjectPoolingContainer<T> : MonoBehaviour where T : MonoBehaviour, IObjectPoolAble<T>
 {
     private Dictionary<string, ObjectPool<T>> objectPools = new Dictionary<string, ObjectPool<T>>();
     public void Initialize(List<ObjectPoolData<T>> prefabes)
@@ -25,9 +23,9 @@ public class ObjectPoolingContainer<T> : MonoBehaviour where T : MonoBehaviour,I
 
             objectPools.Add(prefab.Type.name, objectPool);
             Debug.Log(prefab.Type.name + " 오브젝트 풀링 Initalize 완료!");
-        }  
+        }
     }
-    
+
     public T PoolObject(string objName, Vector2 spawnPos)
     {
         return objectPools[objName].GetFromPool(spawnPos);

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +11,8 @@ public class MovePlatform : PuzzleInteractableObject
     private int curPathEndIndex = 0;
 
     private float elispedTime = 0f;
+
+    public LayerMask TargetLayerMask;
 
     private void Awake()
     {
@@ -56,7 +57,7 @@ public class MovePlatform : PuzzleInteractableObject
 
         if (Vector3.Distance(transform.position, MovePaths[curPathEndIndex]) < 0.1f)
         {
-            if(curPathEndIndex + 1 == MovePaths.Count)
+            if (curPathEndIndex + 1 == MovePaths.Count)
             {
                 curPathEndIndex = 0;
             }
@@ -64,7 +65,7 @@ public class MovePlatform : PuzzleInteractableObject
             {
                 curPathEndIndex++;
             }
-            if(curPathStartIndex + 1 == MovePaths.Count)
+            if (curPathStartIndex + 1 == MovePaths.Count)
             {
                 curPathStartIndex = 0;
             }
@@ -78,15 +79,21 @@ public class MovePlatform : PuzzleInteractableObject
     }
 
     /*Player 객체 추가 됬을때 사용되는 코드 */
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    collision.transform.SetParent(transform);
-    //}
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (TargetLayerMask == (TargetLayerMask | 1 << collision.gameObject.layer))
+        {
+            collision.transform.SetParent(transform);
+        }
+    }
 
-    //private void OnCollisionExit(Collision collision)
-    //{
-    //    collision.transform.SetParent(null);
-    //}
+    private void OnCollisionExit(Collision collision)
+    {
+        if (TargetLayerMask == (TargetLayerMask | 1 << collision.gameObject.layer))
+        {
+            collision.transform.SetParent(null);
+        }
+    }
 
     public override void InterAction()
     {

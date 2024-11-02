@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 //게임내의 퍼즐요소이며 상호작용을 할 수 있는 부모클래스
@@ -11,7 +9,7 @@ public abstract class PuzzleInteractableObject : MonoBehaviour, IObjectPoolAble<
 
 
     public virtual void InterAction() { } //Player와 상호작용하는 메서드
-    public virtual void Print() {}
+    public virtual void Print() { }
 
     public void DisableObject()
     {
