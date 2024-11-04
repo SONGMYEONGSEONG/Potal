@@ -606,6 +606,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3975660818585055154}
+  - {fileID: 4512938799273832672}
   m_Father: {fileID: 2917361920199807223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3808056299510250658
@@ -1595,7 +1596,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6815659845865875657}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 9c52bf6ca753540418e1ec7874938258, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1696,7 +1697,19 @@ MonoBehaviour:
     m_ActionId: 61bec589-22ea-420c-a721-3adc1045b9d3
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1438899326530204721}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnGrip
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 097e0206-5e9f-4e83-b793-622fdc076ef1
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -1796,6 +1809,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 55
   maxSlopeAngle: 60
+  GripPivotTr: {fileID: 4512938799273832672}
+  GripObjectLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &2654195337366783440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1808,8 +1825,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 008c220b66f851349813b97accd367aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curSpeed: 10
-  curJumpPower: 150
+  curSpeed: 7
+  curJumpPower: 200
   speedMin: 5
   jumpPowerMin: 100
   speedMax: 20
@@ -1834,6 +1851,37 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   RayDistance: 2
+--- !u!1 &7195326277229742206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4512938799273832672}
+  m_Layer: 6
+  m_Name: GripPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4512938799273832672
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7195326277229742206}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.41999996, z: 1.6199999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6003456509208028352}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7346214970575316983
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Fire",
+                    "name": "Grip",
                     "type": "Button",
                     "id": "097e0206-5e9f-4e83-b793-622fdc076ef1",
                     "expectedControlType": "Button",
@@ -171,7 +171,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Fire",
+                    "action": "Grip",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -182,7 +182,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Fire",
+                    "action": "Grip",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -193,7 +193,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Touch",
-                    "action": "Fire",
+                    "action": "Grip",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -204,7 +204,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
-                    "action": "Fire",
+                    "action": "Grip",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -215,7 +215,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
-                    "action": "Fire",
+                    "action": "Grip",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

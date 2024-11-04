@@ -30,6 +30,12 @@ public class PlayerController : MonoBehaviour
     public float maxSlopeAngle; //해당 경사도 보다 작은경우 캐릭터가 올라갈수 있게 설정
     private RaycastHit slopeHit; //캐릭터 밑 경사도의 법선벡터 호출용으로 사용되는 변수
 
+    [Header("Object Grip")]
+    public Transform GripPivotTr; //잡고있는 오브젝트의 위치
+    private bool isGrip; //오브젝트를 잡고있는상태
+    private GameObject target; //잡고있는 오브젝트의 정보
+    public LayerMask GripObjectLayerMask;
+
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
@@ -85,8 +91,8 @@ public class PlayerController : MonoBehaviour
         }
 
         Vector3 moveVelocity = moveDirection * status.CurSpeed;
-        
-        rigid.velocity = new Vector3 (moveVelocity.x , velocity_Y, moveVelocity.z) + ExtraDir;
+
+        rigid.velocity = new Vector3(moveVelocity.x, velocity_Y, moveVelocity.z) + ExtraDir;
     }
 
     private bool OnSlope() //플레이어 객체가 경사도에 있는지 체크 및 이동 가능한제 확인하는 함수
@@ -107,7 +113,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 GetSlopeMoveDirection()
     {
         Vector3 reflectV = Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
-        if(reflectV != Vector3.zero)
+        if (reflectV != Vector3.zero)
         {
             Debug.Log(reflectV);
         }
@@ -189,5 +195,36 @@ public class PlayerController : MonoBehaviour
                 status.CurStamina = Mathf.Max(0, status.CurStamina - 10);
             }
         }
+    }
+
+    public void OnGrip(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            if (!isGrip && target == null)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(new Vector2(Screen.width / 2, Screen.height / 2));
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit, 4.0f, GripObjectLayerMask))
+                {
+                    target = hit.transform.gameObject;
+
+                    hit.transform.GetComponent<Rigidbody>().isKinematic = true;
+                    hit.transform.SetParent(GripPivotTr);
+                    isGrip = true;
+                }
+            }
+            else if(isGrip && target != null)
+            {
+                isGrip = false;
+                target.transform.SetParent(null);
+                target.transform.GetComponent<Rigidbody>().isKinematic = false;
+                target = null;
+
+            }
+
+        }
+
     }
 }
