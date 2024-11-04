@@ -26,7 +26,9 @@ public class PlayerController : MonoBehaviour
     public Transform GroundPivot;
     public LayerMask GroundMask;
 
-    
+    [Header("Slope Handling")] //경사도에 올라갈시 위로 솟아오르는 현상 제어
+    public float maxSlopeAngle; //해당 경사도 보다 작은경우 캐릭터가 올라갈수 있게 설정
+    private RaycastHit slopeHit; //캐릭터 밑 경사도의 법선벡터 호출용으로 사용되는 변수
 
     private void Awake()
     {
@@ -67,10 +69,48 @@ public class PlayerController : MonoBehaviour
     public void Move()
     {
         moveDirection = curMoveInput.y * transform.forward + curMoveInput.x * transform.right;
-        moveDirection *= status.CurSpeed;
-        moveDirection.y = rigid.velocity.y;
+        Vector3 gravity = Vector3.down * Mathf.Abs(rigid.velocity.y);
 
-        rigid.velocity = moveDirection + ExtraDir;
+        //입력값이 없어도 중력은 어디서든지 적용 되기에 if문 밖으로 꺼냄
+        bool isGravity = OnSlope() ? rigid.useGravity = false : rigid.useGravity = true;
+
+        if (!isGravity)
+        {
+            gravity = Vector3.zero;
+            moveDirection = GetSlopeMoveDirection();
+            //Debug.Log($"경사도 확인 : {moveDirection}");
+        }
+    
+        moveDirection *= status.CurSpeed;
+        //moveDirection.y = rigid.velocity.y;
+
+        rigid.velocity = moveDirection + ExtraDir + gravity;
+
+       
+    }
+
+    private bool OnSlope() //플레이어 객체가 경사도에 있는지 체크 및 이동 가능한제 확인하는 함수
+    {
+        Ray ray = new Ray(GroundPivot.position, Vector3.down);
+        //0.3f는 경사도에 있기에 추가로 더 길게 쏜것
+        if (Physics.Raycast(ray, out slopeHit, 0.3f))
+        {
+            
+            //두개의 벡터 사이의 각도값을 구하는 함수
+            float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
+            return angle <= maxSlopeAngle && angle != 0;
+        }
+
+        return false;
+    }
+
+    private Vector3 GetSlopeMoveDirection()
+    {
+        Vector3 reflectV = Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
+
+        //ProjectOnPlane : 투영된 벡터를 계산해주는 함수
+        //Debug.Log($"투영벡터 : {reflectV} = {moveDirection} , {slopeHit.normal}");
+        return reflectV;
     }
 
     public void Jump(float JumpPower)

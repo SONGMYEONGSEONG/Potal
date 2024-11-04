@@ -157,7 +157,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   Angle: 45
-  RunPlatformTime: 2
+  RunPlatformTime: 999
   curTimer: 0
   MoveSpeed: 6
   JumpPower: 200

@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Player : MonoBehaviour
 {
@@ -21,4 +24,10 @@ public class Player : MonoBehaviour
         status = gameObject.GetComponent<PlayerStatus>();
         interAction = gameObject.GetComponent<InterAction>();
     }
+
+
+
+
 }
+
+
