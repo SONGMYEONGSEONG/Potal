@@ -17,23 +17,23 @@ public class PlayerFlyPlatformCollider : MonoBehaviour
         }
     }
 
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    if (1 << other.gameObject.layer == parentObject.PlayerLayerMask)
-    //    {
-    //        parentObject.curTimer += Time.deltaTime;
-    //        if (parentObject.RunPlatformTime <= parentObject.curTimer)
-    //        {
+    private void OnTriggerStay(Collider other)
+    {
+        if (1 << other.gameObject.layer == parentObject.PlayerLayerMask)
+        {
+            parentObject.curTimer += Time.deltaTime;
+            if (parentObject.RunPlatformTime <= parentObject.curTimer)
+            {
 
-    //            if (other.TryGetComponent(out PlayerController controller))
-    //            {
-    //                parentObject.RunPlatform(controller);
-    //            }
-    //            else
-    //            {
-    //                Debug.Log($"해당 콜리더의 리지드바디가 존재하지 않음 {other.name}");
-    //            }
-    //        }
-    //    }
-    //}
+                if (other.TryGetComponent(out PlayerController controller))
+                {
+                    parentObject.RunPlatform(controller);
+                }
+                else
+                {
+                    Debug.Log($"해당 콜리더의 리지드바디가 존재하지 않음 {other.name}");
+                }
+            }
+        }
+    }
 }

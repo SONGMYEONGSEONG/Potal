@@ -6,6 +6,9 @@ public class JumpPlatform : PuzzleInteractableObject
 
     public void OnTriggerEnter(Collider other)
     {
-
+        if (other.TryGetComponent(out Player player))
+        {
+            player.Controller.Jump(JumpPlatformPower);
+        }
     }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.HID;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
@@ -20,11 +21,12 @@ public class PlayerController : MonoBehaviour
     public float LookSencitive;
     private float curRotX;
 
-
     [Header("IsGrounded")]
     public float RayDistance;
     public Transform GroundPivot;
     public LayerMask GroundMask;
+
+    
 
     private void Awake()
     {
@@ -64,14 +66,11 @@ public class PlayerController : MonoBehaviour
 
     public void Move()
     {
-
         moveDirection = curMoveInput.y * transform.forward + curMoveInput.x * transform.right;
         moveDirection *= status.CurSpeed;
         moveDirection.y = rigid.velocity.y;
 
         rigid.velocity = moveDirection + ExtraDir;
-
-
     }
 
     public void Jump(float JumpPower)
