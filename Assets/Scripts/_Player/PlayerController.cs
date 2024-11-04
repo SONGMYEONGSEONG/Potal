@@ -46,13 +46,20 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Move();
-
+        ApplyCustomGravity();
     }
 
     private void LateUpdate()
     {
         Look();
         ExtraDirCheck();
+    }
+
+    private void ApplyCustomGravity()
+    {
+        // 중력을 수동으로 추가하여 y축 낙하를 더 강하게 설정
+        Vector3 gravity = Physics.gravity * 3.0f;
+        rigid.AddForce(gravity, ForceMode.Acceleration);
     }
 
     private void Look()
@@ -69,33 +76,26 @@ public class PlayerController : MonoBehaviour
     public void Move()
     {
         moveDirection = curMoveInput.y * transform.forward + curMoveInput.x * transform.right;
-        Vector3 gravity = Vector3.down * Mathf.Abs(rigid.velocity.y);
+        float velocity_Y = rigid.velocity.y;
 
-        //입력값이 없어도 중력은 어디서든지 적용 되기에 if문 밖으로 꺼냄
-        bool isGravity = OnSlope() ? rigid.useGravity = false : rigid.useGravity = true;
-
-        if (!isGravity)
+        if (OnSlope())
         {
-            gravity = Vector3.zero;
             moveDirection = GetSlopeMoveDirection();
-            //Debug.Log($"경사도 확인 : {moveDirection}");
+            velocity_Y = moveDirection.y * status.CurSpeed;
         }
-    
-        moveDirection *= status.CurSpeed;
-        //moveDirection.y = rigid.velocity.y;
 
-        rigid.velocity = moveDirection + ExtraDir + gravity;
-
-       
+        Vector3 moveVelocity = moveDirection * status.CurSpeed;
+        
+        rigid.velocity = new Vector3 (moveVelocity.x , velocity_Y, moveVelocity.z) + ExtraDir;
     }
 
     private bool OnSlope() //플레이어 객체가 경사도에 있는지 체크 및 이동 가능한제 확인하는 함수
     {
         Ray ray = new Ray(GroundPivot.position, Vector3.down);
         //0.3f는 경사도에 있기에 추가로 더 길게 쏜것
-        if (Physics.Raycast(ray, out slopeHit, 0.3f))
+        if (Physics.Raycast(ray, out slopeHit, 0.3f, GroundMask))
         {
-            
+
             //두개의 벡터 사이의 각도값을 구하는 함수
             float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
             return angle <= maxSlopeAngle && angle != 0;
@@ -107,7 +107,10 @@ public class PlayerController : MonoBehaviour
     private Vector3 GetSlopeMoveDirection()
     {
         Vector3 reflectV = Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
-
+        if(reflectV != Vector3.zero)
+        {
+            Debug.Log(reflectV);
+        }
         //ProjectOnPlane : 투영된 벡터를 계산해주는 함수
         //Debug.Log($"투영벡터 : {reflectV} = {moveDirection} , {slopeHit.normal}");
         return reflectV;
