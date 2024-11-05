@@ -26,7 +26,7 @@ public class ObjectGrip : MonoBehaviour
                 {
                     target = hit.transform.gameObject;
 
-                    hit.transform.position = GripPivotTr.position;
+                    hit.transform.position = GripPivotTr.position + Vector3.up;
                     hit.transform.GetComponent<Rigidbody>().isKinematic = true;
                     hit.transform.SetParent(GripPivotTr);
                     isGrip = true;
