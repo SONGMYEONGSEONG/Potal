@@ -1564,6 +1564,7 @@ GameObject:
   - component: {fileID: 1438899326530204721}
   - component: {fileID: 2654195337366783440}
   - component: {fileID: 7250706306070961766}
+  - component: {fileID: 670084101311432797}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -1807,12 +1808,8 @@ MonoBehaviour:
   GroundPivot: {fileID: 8446013106174012903}
   GroundMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 183
   maxSlopeAngle: 60
-  GripPivotTr: {fileID: 4512938799273832672}
-  GripObjectLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!114 &2654195337366783440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1826,11 +1823,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curSpeed: 7
-  curJumpPower: 200
+  curJumpPower: 500
   speedMin: 5
-  jumpPowerMin: 100
+  jumpPowerMin: 500
   speedMax: 20
-  jumpPowerMax: 300
+  jumpPowerMax: 500
   healthMax: 9999
   staminaMax: 9999
   curHealth: 0
@@ -1851,6 +1848,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   RayDistance: 2
+--- !u!114 &670084101311432797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6815659845865875657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0692aa11e97b2ef4981c99036b43ecd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GripPivotTr: {fileID: 4512938799273832672}
+  GripObjectLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &7195326277229742206
 GameObject:
   m_ObjectHideFlags: 0
