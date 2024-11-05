@@ -36,7 +36,6 @@ public class PlayerController : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
         status = GetComponent<PlayerStatus>();
-
         objectGrip = GetComponent<ObjectGrip>();
     }
 

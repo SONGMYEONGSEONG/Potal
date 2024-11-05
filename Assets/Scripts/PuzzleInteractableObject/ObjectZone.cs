@@ -7,6 +7,9 @@ using UnityEngine;
 
 public class ObjectZone : MonoBehaviour
 {
+    [SerializeField] private int index;
+    public int Index { get => index; set => index = value; }
+
     private int curCount = 0;
     private TextMeshPro objectCount;
     public LayerMask InterActionObjectLayerMask;
@@ -15,8 +18,7 @@ public class ObjectZone : MonoBehaviour
     //1.오브젝트 존에 n개 이상의 오브젝트를 놓으면 해결되는 기믹
     public bool IsSucces = false;
     public int finishCount = 0;
-
-    public event Action OnEventSucces;
+    public event Action<int> OnEventSucces;
 
     private void Awake()
     {
@@ -54,7 +56,7 @@ public class ObjectZone : MonoBehaviour
             {
                 //ToDoCode : 기믹에 성공한경우 리워드 지급
                 Debug.Log($"기믹을 완료했습니다!");
-                OnEventSucces?.Invoke();
+                OnEventSucces?.Invoke(index);
             }
         }
     }

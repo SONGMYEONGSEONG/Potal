@@ -1,17 +1,17 @@
 using UnityEngine;
 
-public class PlayerFlyPlatformCollider : MonoBehaviour
+public class FlyPlatformCollider : MonoBehaviour
 {
-    public PlayerFlyPlatform parentObject;
+    public FlyPlatform parentObject;
 
     private void Awake()
     {
-        parentObject = GetComponentInParent<PlayerFlyPlatform>();
+        parentObject = GetComponentInParent<FlyPlatform>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (1 << other.gameObject.layer == parentObject.PlayerLayerMask)
+        if (IsLayerMatcted(other.gameObject.layer, parentObject.TargetLayerMask))
         {
             parentObject.curTimer = 0.0f;
         }
@@ -19,15 +19,15 @@ public class PlayerFlyPlatformCollider : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (1 << other.gameObject.layer == parentObject.PlayerLayerMask)
+        if (IsLayerMatcted(other.gameObject.layer, parentObject.TargetLayerMask))
         {
             parentObject.curTimer += Time.deltaTime;
             if (parentObject.RunPlatformTime <= parentObject.curTimer)
             {
 
-                if (other.TryGetComponent(out PlayerController controller))
+                if (other.TryGetComponent(out Rigidbody rigid))
                 {
-                    parentObject.RunPlatform(controller);
+                    parentObject.RunPlatform(rigid);
                 }
                 else
                 {
@@ -35,5 +35,14 @@ public class PlayerFlyPlatformCollider : MonoBehaviour
                 }
             }
         }
+    }
+
+    private bool IsLayerMatcted(int layer , LayerMask targetLayer)
+    {
+        if(targetLayer == (1 << layer | targetLayer))
+        {
+            return true;
+        }
+        return false;
     }
 }

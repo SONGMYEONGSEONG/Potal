@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 514750702730768942}
   - component: {fileID: 6610228611685902655}
   - component: {fileID: 8805898229502738338}
-  - component: {fileID: 4224264032814912548}
-  m_Layer: 0
+  - component: {fileID: 4556265661069418310}
+  m_Layer: 8
   m_Name: Primitive_Slope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4c00f8a4370dde0458a959a34e9383f5, type: 2}
+  - {fileID: 2100000, guid: cbe266e2669f5f24e88c917933ed6824, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4224264032814912548
+--- !u!64 &4556265661069418310
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,8 +116,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9150838043752114444}
   - component: {fileID: 8638383206537519937}
-  m_Layer: 0
-  m_Name: PlayerFlyPlatform
+  m_Layer: 8
+  m_Name: FlyPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,9 +132,9 @@ Transform:
   m_GameObject: {fileID: 6904952538902859234}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.61, y: 0.49, z: -5.93}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.25, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6769007627363689763}
   - {fileID: 514750702730768942}
@@ -152,15 +152,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01132bf3edc8e4240bb46c2331440335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 0}
-  PlayerLayerMask:
+  collider: {fileID: 3429341980096038320}
+  TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 64
-  Angle: 45
-  RunPlatformTime: 999
-  curTimer: 0
-  MoveSpeed: 6
-  JumpPower: 200
+    m_Bits: 192
+  FireDir: 0
+  Angle: 60
+  RunPlatformTime: 1
+  curTimer: 3
+  MoveSpeed: 10
+  JumpPower: 550
 --- !u!1 &7191926186030944595
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +173,7 @@ GameObject:
   - component: {fileID: 6769007627363689763}
   - component: {fileID: 6008338464326326793}
   - component: {fileID: 3429341980096038320}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,13 +188,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7191926186030944595}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
+  m_LocalPosition: {x: 0, y: 0.05, z: 0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9150838043752114444}
-  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
 --- !u!65 &6008338464326326793
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -213,8 +214,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.96, y: 0.1, z: 5.23}
-  m_Center: {x: 0, y: 1.45, z: -1.45}
+  m_Size: {x: 4, y: 0.1, z: 4}
+  m_Center: {x: -0, y: 2.09, z: -0.61}
 --- !u!114 &3429341980096038320
 MonoBehaviour:
   m_ObjectHideFlags: 0

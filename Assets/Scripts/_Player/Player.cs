@@ -5,9 +5,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    //public CameraType cameraType;
 
-    //public CharacterStatusSO statusSO;
     private PlayerController controller;
     private PlayerStatus status;
     private InterAction interAction;
@@ -18,7 +16,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        GameManager.Instance.Player = this;
+        //GameManager.Instance.Player = this;
         //cameraType = CameraType.TPS;
         controller = gameObject.GetComponent<PlayerController>();
         status = gameObject.GetComponent<PlayerStatus>();
