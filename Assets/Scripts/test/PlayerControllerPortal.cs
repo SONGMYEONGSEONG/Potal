@@ -4,7 +4,7 @@ using UnityEngine;
 // using UnityEngine.InputSystem;
 //using static UnityEditor.SceneView;
 
-public class PlayerController : PortalableObject
+public class PlayerControllerPortal : PortalableObject
 {
     //[Header("Movement")]
     //public float moveSpeed;
