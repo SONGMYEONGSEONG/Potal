@@ -8,7 +8,7 @@ public class ObjectGrip : MonoBehaviour
 {
     [Header("Object Grip")]
     public Transform GripPivotTr; //잡고있는 오브젝트의 위치
-    private bool isGrip; //오브젝트를 잡고있는상태
+    public bool isGrip; //오브젝트를 잡고있는상태
     private GameObject target; //잡고있는 오브젝트의 정보
     public LayerMask GripObjectLayerMask;
     public float GripDistance = 3.0f;
@@ -50,16 +50,31 @@ public class ObjectGrip : MonoBehaviour
             }
             else if (isGrip && target != null)
             {
-                isGrip = false;
-                if (target.transform.TryGetComponent<Rigidbody>(out Rigidbody targetRigid))
-                {
-                    targetRigid.freezeRotation = false;
-                }
-                target = null;
-
+                GripInit();
             }
 
         }
 
+    }
+
+    public void GripInit()
+    {
+        isGrip = false;
+        if (target.transform.TryGetComponent<Rigidbody>(out Rigidbody targetRigid))
+        {
+            targetRigid.freezeRotation = false;
+        }
+        target = null;
+    }
+
+    public bool GripTargetCheck(GameObject gribCube)
+    {
+        if(gribCube == target)
+        {
+            return true;
+        }
+
+
+        return false;
     }
 }

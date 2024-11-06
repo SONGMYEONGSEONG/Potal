@@ -1,21 +1,12 @@
 using System;
 using UnityEngine;
 
-public enum FirdDiretion
-{
-    PositiveX = 0,
-    NegativeX = 1,
-    PositiveZ = 2,
-    NegativeZ = 3,
-}
-
 public class FlyPlatform : PuzzleInteractableObject
 {
 
     public FlyPlatformCollider collider;
 
     public LayerMask TargetLayerMask;
-    public FirdDiretion FireDir = FirdDiretion.PositiveX;
     public float Angle = 45.0f;
     public float RunPlatformTime = 2.0f;
     public float curTimer = 0.0f;
@@ -39,11 +30,6 @@ public class FlyPlatform : PuzzleInteractableObject
 
         Debug.Log($"{rigid.transform.name} : {dir} 발사");
 
-        //controller.ExtraDir = new Vector3(dir.x, 0, dir.y) * MoveSpeed;
-        //controller.Jump(dir, JumpPower);
-
-        
-        
         //플레이어인 경우 조작키에 따라 rigid.velocity값을 바꿀 수 있기에 속도보정값에 적용
         if(rigid.transform.TryGetComponent(out PlayerController playerController))
         {

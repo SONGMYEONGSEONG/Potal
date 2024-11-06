@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 6920890997866341897}
   - component: {fileID: 4824865029033267644}
   - component: {fileID: 7451988636751194800}
+  - component: {fileID: -1678834250799308294}
   m_Layer: 7
   m_Name: CubeSmallBlock_InterAction
   m_TagString: Untagged
@@ -165,3 +166,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-1678834250799308294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136066596748270300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67dba4dfdac95a747a3dec9c59a6eec7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OrginPos: {x: 0, y: 0, z: 0}

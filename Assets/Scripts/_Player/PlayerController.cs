@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody rigid;
     public PlayerStatus status;
-    private ObjectGrip objectGrip;
 
     [Header("Movement")]
     private Vector2 curMoveInput;
@@ -36,7 +35,6 @@ public class PlayerController : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
         status = GetComponent<PlayerStatus>();
-        objectGrip = GetComponent<ObjectGrip>();
     }
 
     // Start is called before the first frame update
