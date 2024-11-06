@@ -8,6 +8,9 @@ public enum PuzzleObject
 
 public class GameManager : Singleton<GameManager>
 {
+    private PortalController portalController;
+    public PortalController PortalController { get => portalController; }
+
     private Player playerPrefeb;
     private Player player;
     public Player Player
@@ -25,6 +28,12 @@ public class GameManager : Singleton<GameManager>
 
     private void Initialize()
     {
+        if (PortalController == null)
+        {
+            PortalController prefeb = Resources.Load<PortalController>("Prefebs/Portal/PortalController");
+            portalController = Instantiate(prefeb);
+        }
+
         // 초기화 로직
         //플레이어가 null이면 Resouces로 프리팹 로드
         if (playerPrefeb == null)

@@ -272,7 +272,7 @@ MonoBehaviour:
   outlineRenderer: {fileID: 1089299996777604977}
   placementMask:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 385
   testTransform: {fileID: 1889737466578684776}
 --- !u!1 &6234571011312031841
 GameObject:
@@ -540,7 +540,7 @@ MonoBehaviour:
   outlineRenderer: {fileID: 3535865903245041398}
   placementMask:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 1
   testTransform: {fileID: 1571839205003094835}
 --- !u!1 &7376404108971651006
 GameObject:

@@ -14,6 +14,8 @@ public class Crosshair : MonoBehaviour
     [SerializeField]
     private Image outPortalImg;
 
+    public PortalPair PortalPair { get => portalPair; set => portalPair = value; }
+
     private void Start()
     {
         var portals = portalPair.Portals;

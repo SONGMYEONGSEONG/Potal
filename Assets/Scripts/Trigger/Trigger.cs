@@ -14,6 +14,7 @@ public class Trigger : MonoBehaviour
 
     private void Start()
     {
+
         if(player !=null)
         {
             GameManager.Instance.InitStart();
@@ -26,6 +27,4 @@ public class Trigger : MonoBehaviour
 
         Destroy(this);
     }
-
-
 }

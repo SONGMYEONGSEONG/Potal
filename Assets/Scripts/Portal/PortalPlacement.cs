@@ -14,6 +14,9 @@ public class PortalPlacement : MonoBehaviour
     [SerializeField]
     private Crosshair crosshair;
 
+    public PortalPair Portals { set => portals = value; }
+    public Crosshair Crosshair { set => crosshair = value; }
+
     //private CameraMove cameraMove;
 
     private void Awake()
@@ -23,13 +26,16 @@ public class PortalPlacement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if(!GameManager.Instance.Player.ObjectGrip.isGrip)
         {
-            FirePortal(0, transform.position, transform.forward, 250.0f);
-        }
-        else if (Input.GetButtonDown("Fire2"))
-        {
-            FirePortal(1, transform.position, transform.forward, 250.0f);
+            if (Input.GetButtonDown("Fire1"))
+            {
+                FirePortal(0, transform.position, transform.forward, 250.0f);
+            }
+            else if (Input.GetButtonDown("Fire2"))
+            {
+                FirePortal(1, transform.position, transform.forward, 250.0f);
+            }
         }
     }
 

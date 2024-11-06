@@ -100,7 +100,7 @@ public class PortalableObject : MonoBehaviour
         //Quaternion relativeRot = Quaternion.Inverse(inTransform.rotation) * transform.rotation;
         //relativeRot = halfTurn * relativeRot;
         //transform.rotation = outTransform.rotation * relativeRot;
-        transform.rotation *= halfTurn;
+        transform.rotation *= halfTurn; 
 
        // Update velocity of rigidbody.
        Vector3 relativeVel = inTransform.InverseTransformDirection(rigidbody.velocity);
