@@ -45,15 +45,14 @@ Transform:
   - {fileID: 5526972020352971435}
   - {fileID: 1604936775881403790}
   - {fileID: 437002838861530146}
-  - {fileID: 4692948357557059190}
   - {fileID: 3061216126039660718}
   - {fileID: 8399799855949861413}
   - {fileID: 1456413519072919701}
+  - {fileID: 4692948357557059190}
   - {fileID: 4152829646000348007}
   - {fileID: 2115003033338684450}
   - {fileID: 8686360865594630389}
   - {fileID: 4000275899764731218}
-  - {fileID: 4528666959297691536}
   - {fileID: 496274947810083129}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3252,68 +3251,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7871226766641542135, guid: f91ac61aeaf4fe84cba79c319e35a1c7, type: 3}
---- !u!1001 &4622734103262074524
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 2899897244209970754}
-    m_Modifications:
-    - target: {fileID: 6904952538902859234, guid: 4aec9f4a962da5f42b24f480a83bfc28, type: 3}
-      propertyPath: m_Name
-      value: TestFlyPlayform
-      objectReference: {fileID: 0}
-    - target: {fileID: 9150838043752114444, guid: 4aec9f4a962da5f42b24f480a83bfc28, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 28.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 9150838043752114444, guid: 4aec9f4a962da5f42b24f480a83bfc28, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 9150838043752114444, guid: 4aec9f4a962da5f42b24f480a83bfc28, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -25.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9150838043752114444, guid: 4aec9f4a962da5f42b24f480a83bfc28, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 9150838043752114444, guid: 4aec9f4a962da5f42b24f480a83bfc28, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9150838043752114444, guid: 4aec9f4a962da5f42b24f480a83bfc28, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 9150838043752114444, guid: 4aec9f4a962da5f42b24f480a83bfc28, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9150838043752114444, guid: 4aec9f4a962da5f42b24f480a83bfc28, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9150838043752114444, guid: 4aec9f4a962da5f42b24f480a83bfc28, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 9150838043752114444, guid: 4aec9f4a962da5f42b24f480a83bfc28, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4aec9f4a962da5f42b24f480a83bfc28, type: 3}
---- !u!4 &4528666959297691536 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9150838043752114444, guid: 4aec9f4a962da5f42b24f480a83bfc28, type: 3}
-  m_PrefabInstance: {fileID: 4622734103262074524}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5295559209410217054
 PrefabInstance:
   m_ObjectHideFlags: 0

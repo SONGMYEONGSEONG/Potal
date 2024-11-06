@@ -22,13 +22,6 @@ public class GameManager : Singleton<GameManager>
         base.Awake();
     }
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        // 씬이 로드될 때마다 호출되는 코드
-        Debug.Log("씬이 로드되었습니다!");
-        Initialize();
-    }
-
     private void Initialize()
     {
         // 초기화 로직
@@ -38,7 +31,6 @@ public class GameManager : Singleton<GameManager>
             player = Resources.Load<Player>("Prefebs/Player");
         }
        
-
         //게임매니저 player 객체 생성후 스테이지매니저 생성
         StageManagerInit(StageNum);
 
@@ -66,14 +58,4 @@ public class GameManager : Singleton<GameManager>
         Initialize();
     }
 
-
-
-    private void Update() 
-    {
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            StageNum++;
-            SceneManager.LoadScene("SampleScene");
-        }
-    }
 }

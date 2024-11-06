@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 0666121edd5287d4987047430e7b0170, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -433,7 +433,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 936246159074602524, guid: f1b6ed6840f7ec940904204f4b19eb98, type: 3}
   PuzzleInteractableObjectPrefebs: []
-  StartStageNum: 1
 --- !u!1 &1482912552
 GameObject:
   m_ObjectHideFlags: 0

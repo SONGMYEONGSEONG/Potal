@@ -17,8 +17,6 @@ public class Trigger : MonoBehaviour
         if(player !=null)
         {
             GameManager.Instance.InitStart();
-            //GameManager.Instance.Player = player; //플레이어 데이터 셋팅
-            //GameManager.Instance.PlayerInit(); //플레이어 생성 
         }
 
         if (PuzzleInteractableObjectPrefebs.Count > 0)

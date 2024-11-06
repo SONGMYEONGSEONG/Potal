@@ -10,7 +10,6 @@ public struct RewardObject
     public Vector3 position;
 }
 
-
 public class Stage : MonoBehaviour, IStageManager
 {
     public Vector3 PlayerStartPos;
@@ -78,7 +77,7 @@ public class Stage : MonoBehaviour, IStageManager
             objectzone.OnEventSucces -= Reward;
         }
 
-
+        StageManager.Instance.StageClearDataSave(StageNumber);
     }
 
 
