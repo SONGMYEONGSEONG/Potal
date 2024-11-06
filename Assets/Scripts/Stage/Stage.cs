@@ -53,10 +53,10 @@ public class Stage : MonoBehaviour, IStageManager
 
     private void Reward(int index)
     {
-        for (int i = 0; i < RewardObjects[index].RewardObject.Length; i++)
+        //이미 기믹을 완료하였으면 다시 동작하지 않게 막는 조건문
+        if (!RewardObjects[index].isReward)
         {
-            //이미 기믹을 완료하였으면 다시 동작하지 않게 막는 조건문
-            if (!RewardObjects[index].isReward)
+            for (int i = 0; i < RewardObjects[index].RewardObject.Length; i++)
             {
                 if (RewardObjects[index].RewardObject[i].activeSelf)
                 {
@@ -66,9 +66,11 @@ public class Stage : MonoBehaviour, IStageManager
                 {
                     RewardObjects[index].RewardObject[i].SetActive(true);
                 }
-                RewardObjects[index].isReward = true;
+                
 
             }
+
+            RewardObjects[index].isReward = true;
         }
     }
 

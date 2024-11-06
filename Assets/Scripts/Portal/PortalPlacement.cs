@@ -26,7 +26,7 @@ public class PortalPlacement : MonoBehaviour
 
     private void Update()
     {
-        if(!GameManager.Instance.Player.ObjectGrip.isGrip)
+        if (!GameManager.Instance.Player.ObjectGrip.isGrip)
         {
             if (Input.GetButtonDown("Fire1"))
             {
@@ -77,30 +77,33 @@ public class PortalPlacement : MonoBehaviour
                 return;
             }
 
-            // Orient the portal according to camera look direction and surface direction.
-            //var cameraRotation = cameraMove.TargetRotation;
-            Vector3 portalRight = GameManager.Instance.Player.Controller.PlayerLookRotation * Vector3.right;
-
-            if (Mathf.Abs(portalRight.x) >= Mathf.Abs(portalRight.z))
+            if (hit.collider.tag == "PortalAble")
             {
-                portalRight = (portalRight.x >= 0) ? Vector3.right : -Vector3.right;
-            }
-            else
-            {
-                portalRight = (portalRight.z >= 0) ? Vector3.forward : -Vector3.forward;
-            }
+                // Orient the portal according to camera look direction and surface direction.
+                //var cameraRotation = cameraMove.TargetRotation;
+                Vector3 portalRight = GameManager.Instance.Player.Controller.PlayerLookRotation * Vector3.right;
 
-            var portalForward = -hit.normal;
-            var portalUp = -Vector3.Cross(portalRight, portalForward);
+                if (Mathf.Abs(portalRight.x) >= Mathf.Abs(portalRight.z))
+                {
+                    portalRight = (portalRight.x >= 0) ? Vector3.right : -Vector3.right;
+                }
+                else
+                {
+                    portalRight = (portalRight.z >= 0) ? Vector3.forward : -Vector3.forward;
+                }
 
-            var portalRotation = Quaternion.LookRotation(portalForward, portalUp);
+                var portalForward = -hit.normal;
+                var portalUp = -Vector3.Cross(portalRight, portalForward);
 
-            // Attempt to place the portal.
-            bool wasPlaced = portals.Portals[portalID].PlacePortal(hit.collider, hit.point, portalRotation);
+                var portalRotation = Quaternion.LookRotation(portalForward, portalUp);
 
-            if (wasPlaced)
-            {
-                crosshair.SetPortalPlaced(portalID, true);
+                // Attempt to place the portal.
+                bool wasPlaced = portals.Portals[portalID].PlacePortal(hit.collider, hit.point, portalRotation);
+
+                if (wasPlaced)
+                {
+                    crosshair.SetPortalPlaced(portalID, true);
+                }
             }
         }
     }

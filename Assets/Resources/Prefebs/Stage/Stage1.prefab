@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 978f13109724041418ee6ebe5d6e484a, type: 2}
+  - {fileID: 2100000, guid: 934a4acff654454438290334178ba149, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -314,7 +314,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 978f13109724041418ee6ebe5d6e484a, type: 2}
+  - {fileID: 2100000, guid: 934a4acff654454438290334178ba149, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -581,7 +581,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 978f13109724041418ee6ebe5d6e484a, type: 2}
+  - {fileID: 2100000, guid: 934a4acff654454438290334178ba149, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -955,7 +955,7 @@ GameObject:
   - component: {fileID: 5353238797264600088}
   m_Layer: 0
   m_Name: WallBlock_Up
-  m_TagString: Untagged
+  m_TagString: PortalAble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1003,7 +1003,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 978f13109724041418ee6ebe5d6e484a, type: 2}
+  - {fileID: 2100000, guid: 2e5a72edf418eb14d8e7dcbb68edbe0a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1166,7 +1166,7 @@ GameObject:
   - component: {fileID: 1781163948324113083}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: PortalAble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1214,7 +1214,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 978f13109724041418ee6ebe5d6e484a, type: 2}
+  - {fileID: 2100000, guid: 2e5a72edf418eb14d8e7dcbb68edbe0a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1351,7 +1351,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 978f13109724041418ee6ebe5d6e484a, type: 2}
+  - {fileID: 2100000, guid: 934a4acff654454438290334178ba149, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
