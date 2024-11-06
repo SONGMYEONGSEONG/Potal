@@ -36,7 +36,7 @@ public class Portal : MonoBehaviour
 
     private void Start()
     {
-        outlineRenderer.material.SetColor("_OutlineColour", PortalColor);
+        outlineRenderer.material.SetColor("_OutlineColor", PortalColor);
 
         gameObject.SetActive(false);
     }
