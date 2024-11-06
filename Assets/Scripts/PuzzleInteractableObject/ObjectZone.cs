@@ -26,7 +26,6 @@ public class ObjectZone : PuzzleInteractableObject
     {
         curCount = 0;
         IsSucces = false;
-        objectCount = GetComponentInChildren<TextMeshPro>();
         curCountPrint();
     }
 
