@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public float MaxRotX;
     public float LookSencitive;
     private float curRotX;
+    public Quaternion PlayerLookRotation ;
 
     [Header("IsGrounded")]
     public float RayDistance;
@@ -72,6 +73,8 @@ public class PlayerController : MonoBehaviour
 
         //ÁÂ,¿ì È¸Àü
         transform.localEulerAngles += new Vector3(0f, mouseDelta.x * LookSencitive, 0f);
+
+        PlayerLookRotation = Quaternion.EulerAngles(-curRotX, transform.localEulerAngles.y,0f);
     }
 
     public void Move()

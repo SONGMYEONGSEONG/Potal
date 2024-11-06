@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        //GameManager.Instance.Player = this;
+        GameManager.Instance.Player = this;
         //cameraType = CameraType.TPS;
         controller = GetComponent<PlayerController>();
         status = GetComponent<PlayerStatus>();
