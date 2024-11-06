@@ -5,13 +5,14 @@ using System.Text;
 using TMPro;
 using UnityEngine;
 
-public class ObjectZone : MonoBehaviour
+public class ObjectZone : PuzzleInteractableObject
 {
     [SerializeField] private int index;
     public int Index { get => index; set => index = value; }
 
     private int curCount = 0;
-    private TextMeshPro objectCount;
+    public TextMeshPro objectName;
+    public TextMeshPro objectCount;
     public LayerMask InterActionObjectLayerMask;
     StringBuilder stringBuilder = new StringBuilder();
 
@@ -20,6 +21,7 @@ public class ObjectZone : MonoBehaviour
     public int finishCount = 0;
     public event Action<int> OnEventSucces;
 
+    
     private void Awake()
     {
         curCount = 0;

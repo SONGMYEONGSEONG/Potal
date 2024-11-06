@@ -8,6 +8,7 @@ public enum PuzzleObject
 
 public class GameManager : Singleton<GameManager>
 {
+    private Player playerPrefeb;
     private Player player;
     public Player Player
     {
@@ -33,9 +34,9 @@ public class GameManager : Singleton<GameManager>
     {
         // 초기화 로직
         //플레이어가 null이면 Resouces로 프리팹 로드
-        if (player == null)
+        if (playerPrefeb == null)
         {
-            player = Resources.Load<Player>("Prefebs/Player");
+            playerPrefeb = Resources.Load<Player>("Prefebs/Player");
         }
        
 
@@ -56,7 +57,7 @@ public class GameManager : Singleton<GameManager>
 
     public void PlayerInit(Vector3 spawnPos)
     {
-        Instantiate(player,spawnPos,Quaternion.identity);
+        player = Instantiate(playerPrefeb, spawnPos,Quaternion.identity);
     }
 
     //Debug

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class LaserTrapPlatform : PuzzleInteractableObject
 {
@@ -19,7 +20,9 @@ public class LaserTrapPlatform : PuzzleInteractableObject
 
         if (Physics.Raycast(ray, out RaycastHit hit, laserDistance, PlayerLayerMask))
         {
-            Debug.Log("Player가 레이어에 감지 되었습니다!");
+            //Debug
+            Debug.Log("Player가 레이저에 감지되어 원래 위치로 돌아갑니다.");
+            hit.transform.position = StageManager.Instance.PlayerSpawnPos();
         }
     }
 }

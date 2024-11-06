@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StageClearDoor : MonoBehaviour
+public class StageClearDoor : PuzzleInteractableObject
 {
     public Transform ClearCheckPivot;
     public float RayDistance;
