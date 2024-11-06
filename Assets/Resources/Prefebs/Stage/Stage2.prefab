@@ -73,8 +73,15 @@ MonoBehaviour:
   StageClearDoor: {fileID: 7147176160371931855}
   objectZone:
   - {fileID: 5279121872545024903}
+  - {fileID: 5279121872545024903}
   RewardObjects:
-  - {fileID: 3633260311108253550}
+  - isReward: 0
+    RewardObject:
+    - {fileID: 0}
+    - {fileID: 0}
+  - isReward: 0
+    RewardObject:
+    - {fileID: 0}
 --- !u!1 &175574396039891450
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,10 +693,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90f16909cbf82647b35371b4122f16d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OrginPos: {x: 0, y: 0, z: 0}
+  IsOneMove: 0
   Speed: 1
   MovePaths:
   - {x: 2, y: 4, z: 15}
   - {x: 2, y: 4, z: 20}
+  StopTime: 0
   TargetLayerMask:
     serializedVersion: 2
     m_Bits: 246
@@ -738,6 +748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a20e41d43e6c634aa73ba1386b50f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OrginPos: {x: 0, y: 0, z: 0}
   LaserPivot: {fileID: 7426077189298410913}
   Laser: {fileID: 4249684613022156806}
   PlayerLayerMask:
@@ -1187,10 +1198,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90f16909cbf82647b35371b4122f16d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OrginPos: {x: 0, y: 0, z: 0}
+  IsOneMove: 0
   Speed: 1
   MovePaths:
   - {x: 31.51, y: -10.6, z: 24.93}
   - {x: 28.86, y: 4.51, z: 24.93}
+  StopTime: 0
   TargetLayerMask:
     serializedVersion: 2
     m_Bits: 246
@@ -1483,6 +1497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a20e41d43e6c634aa73ba1386b50f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OrginPos: {x: 0, y: 0, z: 0}
   LaserPivot: {fileID: 5711185338406177319}
   Laser: {fileID: 1360238399346646027}
   PlayerLayerMask:
@@ -2346,6 +2361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a20e41d43e6c634aa73ba1386b50f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OrginPos: {x: 0, y: 0, z: 0}
   LaserPivot: {fileID: 5953092166324868127}
   Laser: {fileID: 7230105735946000592}
   PlayerLayerMask:
@@ -2552,10 +2568,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90f16909cbf82647b35371b4122f16d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OrginPos: {x: 0, y: 0, z: 0}
+  IsOneMove: 0
   Speed: 1
   MovePaths:
   - {x: -3.57, y: 4, z: 20}
   - {x: -3.57, y: 4, z: 15}
+  StopTime: 0
   TargetLayerMask:
     serializedVersion: 2
     m_Bits: 246
@@ -3033,10 +3052,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90f16909cbf82647b35371b4122f16d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OrginPos: {x: 0, y: 0, z: 0}
+  IsOneMove: 0
   Speed: 1
   MovePaths:
   - {x: 8, y: 4, z: 20}
   - {x: 8, y: 4, z: 15}
+  StopTime: 0
   TargetLayerMask:
     serializedVersion: 2
     m_Bits: 246

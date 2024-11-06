@@ -396,6 +396,7 @@ MonoBehaviour:
   stageNum: 1
   ButtonObject: {fileID: 4776085136324125745}
   LockObject: {fileID: 7694542135981456252}
+  StageName: {fileID: 3915681239155848005}
 --- !u!1 &9159291651827766522
 GameObject:
   m_ObjectHideFlags: 0

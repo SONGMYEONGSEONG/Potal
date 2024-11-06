@@ -11,15 +11,14 @@ public struct RewardObject
     public Vector3 position;
 }
 
-<<<<<<< Updated upstream
-=======
+
 [System.Serializable]
 public class OnRewardObject
 {
     public bool isReward;
     public GameObject[] RewardObject;
 }
->>>>>>> Stashed changes
+
 
 public class Stage : MonoBehaviour, IStageManager
 {
@@ -87,15 +86,13 @@ public class Stage : MonoBehaviour, IStageManager
             objectzone.OnEventSucces -= Reward;
         }
 
-<<<<<<< Updated upstream
 
-=======
         StageManager.Instance.StageClearDataSave(StageNumber);
 
         //Debug.Log()
         Cursor.lockState = CursorLockMode.None; // 게임에서 마우스 커서를 숨기게 하는 메서드
         SceneManager.LoadScene("_TitleScene");
->>>>>>> Stashed changes
+
     }
 
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 public interface IStageManager
@@ -11,15 +12,15 @@ public interface IStageManager
 public class StageManager : Singleton<StageManager>
 {
     public IStageManager[] StagePrefebs;
+    public List<bool> IsStageClear = new List<bool>();
     private Stage curStage;
     public int curStageNum = 0;
+    StringBuilder strBuilder = new StringBuilder();
 
     protected override void Awake()
     {
         base.Awake();
         StagePrefebs = Resources.LoadAll<Stage>("prefebs/Stage");
-<<<<<<< Updated upstream
-=======
 
         for (int i = 0; i < StagePrefebs.Length; i++)
         {
@@ -37,7 +38,6 @@ public class StageManager : Singleton<StageManager>
             }
         }
 
->>>>>>> Stashed changes
     }
 
     public void StageInitialize(int stageNum)
@@ -52,8 +52,6 @@ public class StageManager : Singleton<StageManager>
         return curStage.PlayerStartPos;
     }
 
-<<<<<<< Updated upstream
-=======
     public void StageClearDataSave(int clearStageNum)
     {
         strBuilder.Clear();
@@ -68,5 +66,5 @@ public class StageManager : Singleton<StageManager>
     {
         return IsStageClear[clearStageNum - 1];
     }
->>>>>>> Stashed changes
+
 }
