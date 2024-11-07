@@ -13,8 +13,8 @@ public class PortalController : MonoBehaviour
         portals = GetComponentInChildren<PortalPair>();
         crosshair = GetComponentInChildren<Crosshair>();
 
-        Instantiate(portals);
-        Instantiate(crosshair);
+        //Instantiate(portals);
+        //Instantiate(crosshair);
     }
 
 }
