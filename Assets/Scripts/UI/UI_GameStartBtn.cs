@@ -7,6 +7,11 @@ public class UI_GameStartBtn : MonoBehaviour
 {
     public GameObject StageSelect;
 
+    public void Awake()
+    {
+        SoundManager.Instance.StopBgm();
+        SoundManager.Instance.PlayBgm("Title");
+    }
     public void GameStart()
     {
         StageSelect.SetActive(true);

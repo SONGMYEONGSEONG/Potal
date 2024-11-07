@@ -79,6 +79,7 @@ public class PortalPlacement : MonoBehaviour
 
             if (hit.collider.tag == "PortalAble")
             {
+                SoundManager.Instance.PlaySFX("PotalCreate");
                 // Orient the portal according to camera look direction and surface direction.
                 //var cameraRotation = cameraMove.TargetRotation;
                 Vector3 portalRight = GameManager.Instance.Player.Controller.PlayerLookRotation * Vector3.right;

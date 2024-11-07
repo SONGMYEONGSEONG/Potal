@@ -57,6 +57,7 @@ public class ObjectZone : PuzzleInteractableObject
             {
                 //ToDoCode : 기믹에 성공한경우 리워드 지급
                 Debug.Log($"기믹을 완료했습니다!");
+                SoundManager.Instance.PlaySFX("GimicSucces");
                 OnEventSucces?.Invoke(index);
             }
         }

@@ -14,8 +14,10 @@ public class Trigger : MonoBehaviour
 
     private void Start()
     {
+        SoundManager.Instance.StopBgm();
+        SoundManager.Instance.PlayBgm("Game");
 
-        if(player !=null)
+        if (player !=null)
         {
             GameManager.Instance.InitStart();
         }
