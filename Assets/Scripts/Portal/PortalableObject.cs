@@ -22,7 +22,7 @@ public class PortalableObject : MonoBehaviour
 
     protected virtual void Awake()
     {
-        cloneObject = new GameObject();
+        cloneObject = new GameObject(transform.name + "clone");
         cloneObject.SetActive(false);
         var meshFilter = cloneObject.AddComponent<MeshFilter>();
         var meshRenderer = cloneObject.AddComponent<MeshRenderer>();
